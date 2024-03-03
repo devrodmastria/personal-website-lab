@@ -6,29 +6,46 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
         rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
         crossorigin="anonymous">
-    
-    
     <title>Home</title>
+    <style>
+        .footer{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+<header>
 
-    <div class="row" style="margin-top: 10px;">
-        <div class="col-2 offset-1">
-            <a class="btn btn-primary" href="index.html">Home</a>
-        </div>
-        <div class="col-3 offset-1">
-            <a class="btn btn-warning" href="portfolio.html">Portfolio</a>
-        </div>
-        <div class="col-2 offset-1">
-            <a class="btn btn-secondary" href="about.html">About</a>
-        </div>
-    </div>
+    <ul class="nav" style="margin: auto;">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="portfolio.html">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+    </ul>
+</header>
+
+
 
     <div style="width: 300px; margin-top: 20px; margin-bottom: 20px; margin: auto; align-items: center;">
+        <h4 style="margin-top: 20px; text-align: center;">Project experience chart</h4>
         <canvas id="pieChart"></canvas>
-        <h4 style="margin-top: 20px;">Projects/Hobbies chart</h4>
+        
     </div>
     
+    <p class="lead" style="margin: auto; text-align: center; margin-top: 20px">
+      <a class="btn btn-primary btn-lg" href="portfolio.html" role="button">Learn more</a>
+    </p>
+    <footer class="footer"><p>Just a fun little project!</p></footer>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         const myChart = document.getElementById('pieChart');
@@ -36,10 +53,10 @@
         new Chart(myChart, {
             type: 'doughnut',
             data: {
-                labels: ['Mobile', 'Web', 'Running'],
+                labels: ['Mobile', 'Web', 'Backend'],
                 datasets: [{
-                    label: '% of time', 
-                    data:[50,20,20],
+                    label: '% of experience', 
+                    data:[50,20,30],
                     borderWidth: 1
                 }]
             }
